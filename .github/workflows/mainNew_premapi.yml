@@ -13,15 +13,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@mainNew
 
     - name: Set up Java version
       uses: actions/setup-java@v1
       with:
         java-version: '11'
-
-    - name: Build with Maven
-      run: mvn clean install
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
@@ -29,4 +26,4 @@ jobs:
         app-name: 'premapi'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_c08eeb36fa924ab997030ecafa3d4d0a }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ github.workspace }}/*.jar'
