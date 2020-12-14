@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'premapi'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5b127be597c3418b828f278cf8097e6f }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c08eeb36fa924ab997030ecafa3d4d0a }}
         package: '${{ github.workspace }}/target/*.war'
